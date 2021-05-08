@@ -1,1 +1,65 @@
 <p>update-product works!</p>
+<h3>Update Product</h3>
+<div style="width:400px">
+    <!-- <form (ngSubmit)="onSubmit()"> -->
+        <form #createProductForm="ngForm" novalidate>
+        <div class="form-group">
+            <label for="title">Product Title</label>
+            <input type="text" name="title" class="form-control" 
+                    placeholder="Enter the product title" required minlength="5" 
+                    #title="ngModel"
+                    [(ngModel)]= "product.title"
+                    [ngClass]= "{'is-invalid':title?.errors && (title?.touched || title?.dirty),
+                                    'is-valid':title?.valid}">
+            <div class="invalid-feedback">
+                <strong *ngIf= "title?.errors?.required">Title is required</strong>
+                <strong *ngIf= "title?.errors && (title?.touched || title?.dirty) ">Title is not valid</strong>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="weight">Product weight</label>
+            <input type="text" name="weight" class="form-control" 
+                  placeholder="Enter the product weight" 
+                  required [(ngModel)]= "product.weight" #weight="ngModel"
+                  [ngClass]= "{'is-invalid':weight?.errors && (weight?.touched || weight?.dirty),
+                  'is-valid':weight?.valid}">
+                  <div class="invalid-feedback">
+                    <strong *ngIf= "weight?.errors?.required">weight is required</strong>
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="category">Product category</label>
+            <input type="text" name="category" class="form-control" 
+                  placeholder="Enter the product category" required 
+                  [(ngModel)]= "product.category" #category="ngModel"
+                  [ngClass]= "{'is-invalid':category?.errors && (category?.touched || category?.dirty),
+                  'is-valid':category?.valid}">
+                  <div class="invalid-feedback">
+                    <strong *ngIf= "category?.errors?.required">category is required</strong>
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="brand">Product brand</label>
+            <input type="text" name="brand" class="form-control" 
+                  placeholder="Enter the product brand" required 
+                  [(ngModel)]= "product.brand" #brand="ngModel"
+                  [ngClass]= "{'is-invalid':brand?.errors && (brand?.touched || brand?.dirty),
+                  'is-valid':brand?.valid}">
+                  <div class="invalid-feedback">
+                    <strong *ngIf= "brand?.errors?.required">brand is required</strong>
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="price">Product price</label>
+            <input type="text" name="price" class="form-control" 
+                  placeholder="Enter the product price" required 
+                  [(ngModel)]= "product.price" #price="ngModel"
+                  [ngClass]= "{'is-invalid':price?.errors && (price?.touched || price?.dirty),
+                  'is-valid':price?.valid}">
+                <div class="invalid-feedback">
+                    <strong *ngIf= "price?.errors?.required">price is required</strong>
+                </div>
+        </div>
+        <button type="submit" class="btn btn-success" (click)= "onSubmit()" >Update Product</button>
+    </form>
+</div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Product } from '../model/product';
 import { ProductserviceService } from '../productservice.service';
@@ -43,16 +43,8 @@ export class ProductListComponent implements OnInit {
   addProduct(){
     this.router.navigate(['add']);
   }
-  /*
-  updateProduct(id:number,product:Product){
-    this.prodService.updateProduct(id,product).subscribe(
-      data=>{
-      },
-      error=>console.log(error));
-    alert("product updated succesfully");
-    this.reloadProductData();
-
+  
+  updateProduct(id:number){
+    this.router.navigate(['update',id]);
   }
-  */
-
 }
