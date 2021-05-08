@@ -28,28 +28,28 @@ export class ProductListComponent implements OnInit {
 
   deleteProduct(pid:number){
     this.prodService.deleteProduct(pid).subscribe(
+      result=>{
+      },
+      error=>console.log(error));
+      alert("Product deleted succesfully");
+      this.reloadProductData();
+  }
+
+  productDetails(id:number){
+    this.router.navigate(['details',id]);
+
+  }
+
+  /*
+  updateProduct(id:number,product:Product){
+    this.prodService.updateProduct(id,product).subscribe(
       data=>{
-        alert("product deleted succesfully");
-      }
-    );
+      },
+      error=>console.log(error));
+    alert("product updated succesfully");
+    this.reloadProductData();
 
   }
-
-  updateProduct(product:Product){
-    this.prodService.updateProduct(product).subscribe(
-      data=>{
-        alert("product updated succesfully");
-      }
-    );
-
-  }
-
-  getProduct(pid:number){
-    this.prodService.getProduct(pid).subscribe(
-      product=>{
-        this.product=product;
-      }
-    );
-  }
+  */
 
 }

@@ -38,8 +38,8 @@ export class ProductComponent implements OnInit {
 
   }
 
-  updateProduct(product:Product){
-    this.prodService.updateProduct(product).subscribe(
+  updateProduct(id:number,product:Product){
+    this.prodService.updateProduct(id,product).subscribe(
       data=>{
         alert("product updated succesfully");
       }

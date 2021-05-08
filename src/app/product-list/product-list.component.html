@@ -19,7 +19,7 @@
                         <td>{{product.category}} </td>
                         <td>{{product.price}} </td>
                         <td>
-                            <button (click)='getProduct(product.id)' class='btn btn-info' style='margin-left: auto;'>Details</button>
+                            <button (click)='productDetails(product.id)' class='btn btn-info' style='margin-left: auto;'>Details</button>
                             <button (click)='deleteProduct(product.id)' class='btn btn-danger' style="margin-left: 15px;">Delete</button>
                             <button (click)='updateProduct' class='btn btn-info' style='margin-left: 15px;'>Update</button>
                         </td>

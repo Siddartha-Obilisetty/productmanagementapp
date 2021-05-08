@@ -1,1 +1,23 @@
 <p>product-details works!</p>
+<h2>Product Details</h2>
+<hr>
+<div *ngIf="product">
+    <div>
+        <label><b>Title:</b></label>  {{product.title}}
+    </div>
+    <div>
+        <label><b>Weight:</b></label>  {{product.weight}}
+    </div>
+    <div>
+        <label><b>Category:</b></label>  {{product.category}}
+    </div>
+    <div>
+        <label><b>Brand:</b></label>  {{product.brand}}
+    </div>
+    <div>
+        <label><b>Price:</b></label>  {{product.price}}
+    </div>
+</div>
+<br>
+<br>
+<button (click)="goToProductList()" class="btn btn-primary">Go To Product List</button>
