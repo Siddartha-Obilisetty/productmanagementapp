@@ -27,7 +27,7 @@ export class CreateProductComponent implements OnInit {
     );
   }
   goToProductsList() {
-    this.router.navigate(['product']);
+    this.router.navigate(['products']);
   }
   onSubmit(){
     this.submitted=true;

@@ -3,7 +3,7 @@ export class Product{
     public id:number;
     public title:string;
     public weight:number;
-    public catogory:string;
+    public category:string;
     public brand : string;
     public price :number;
 }
